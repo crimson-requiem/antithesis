@@ -1,0 +1,25 @@
+p {
+  color: white;
+  font-family: courier;
+}
+h1 {
+  color: white;
+  font-family: serif;
+}
+body {
+  background-color: #151B23;
+}
+button {
+  background-color: #151B23;
+  border-color: white;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  transition-duration: 0.4ms
+  
+}
+button.hover {
+  background-color: white;
+  color: black;
+  text-decoration: underline white;
+}
