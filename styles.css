@@ -16,10 +16,21 @@ button {
   font-family: sans-serif;
   text-align: center;
   transition-duration: 0.4ms
+  padding: 15px 32px
   
 }
 button.hover {
   background-color: white;
   color: black;
   text-decoration: underline white;
+}
+.games {
+  button {
+  width: 33%
+  }
+}
+.button-last {
+  button {
+    width: 50%
+}
 }
