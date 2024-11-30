@@ -10,10 +10,10 @@ body {
   background-color: #151B23;
 }
 button {
-  background-color: #151B23;
-  border-color: white;
-  color: white;
-  font-family: sans-serif;
+  background-color: white;
+  border-color: black;
+  color: black;
+  font-family: courier;
   text-align: center;
   transition-duration: 0.4ms
   padding: 15px 32px
