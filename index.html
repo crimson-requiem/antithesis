@@ -5,30 +5,20 @@
     <link rel="stylesheet" href=styles.css>
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/b/b4/Color_icon_purple_v2.svg">
     <script>
-      // random number generator lol
-let x = math.random();
-      if (x >= 0.1) {
-        document.getElementById("ego").innerHTML = "Kendrick my goat frfr"
-      }
-      if (x >= 0.2) {
-        document.getElementById("ego").innerHTML = "Nine Ropes. Polarized Light. Crow and Declaration. Between Front and Back. Imaginary Technique: Purple."
-      }
-      if (x >= 0.4) {
-        document.getElementById("ego").innerHTML = "Go/jo"
-      }
-      if (x >= 0.5) {
-        document.getElementById("ego").innerHTML = "If you hate on everyone, nothing's discriminatory."
-      }
-      if (x >= 0.6) {
-        document.getElementById("ego").innerHTML = "This looks really bad, I'm sorry."
-      }
-      if (x >= 0.7) {
-        document.getElementById("ego").innerHTML = "If you guys notice any bugs, tell me about them."
-      }
-      if (x <= 0.8) {
-        document.getElementById("ego").innerHTML = "Site is still a work in progress!"
-      }
-    </script>
+      function create() {
+            var url = document.getElementById('input').value;
+            var win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.margin = '0';
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+        }
+        </script>
   </head>
   <body>
     <h1> Polarized </h1>
@@ -37,5 +27,10 @@ let x = math.random();
     <button><a href=activities.html> Games </a></button>
     <button><a href="https://cobalt-requiem.github.io/EmulatorJS/index.html"> Emulator </a></button>
     <button><a href=echo/soundboard/index.html> Soundboard </a></button>
+    <br>    
+        <input type="text" value="https://cobalt-requiem.github.io/antithesis" placeholder="https://cobalt-requiem.github.io/antithesis" id='input' autofocus>
+        <button onclick='create()'>Cloak!</button>
+      <br>
+      <p id="id">Inbuilt Cloaker</p>
   </body>
 </html>
