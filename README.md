@@ -8,4 +8,6 @@ This site is rated highly by nine out of ten school administrators~
 <br>
 js13k for more games
 <br>
+bad time simulator by jcw87
+<br>
 me for making the site
