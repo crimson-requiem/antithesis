@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+	<title>jsFallout</title>
+	<meta charset="utf-8" />
+	<link rel="icon" href="inc/favicon.ico"/>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="inc/main.css"/>
+	<script src="dist/jsfo.js"></script>
+	<script>
+
+		var mainState_prevState;	// track previous state of mainState.statePause
+
+		// Page functions
+		function openInfo() {
+			mainState_prevState = mainState.statePause;
+			mainState.statePause = true;
+			document.getElementById('lightbox').style.display = 'block';
+			document.getElementById('info').style.display = 'block';
+		};
+
+		function openHelp() {
+			mainState_prevState = mainState.statePause;
+			mainState.statePause = true;
+			document.getElementById('lightbox').style.display = 'block';
+			document.getElementById('help').style.display = 'block';
+		};
+
+		function closeWindows() {
+			mainState.statePause = mainState_prevState;
+			document.getElementById('lightbox').style.display = 'none';
+			document.getElementById('info').style.display = 'none';
+			document.getElementById('help').style.display = 'none';
+		};
+
+		function browserTestFail() {
+			document.getElementById("mainCanvas").style.display = 'none';
+			document.getElementById("main_failed").style.display = 'block';
+		};
+
+	</script>
+
+</head>
+
+<!--Entry point is defined in main.js -->
+<body>
+	<div id="main">
+		<div id="main_header">
+			<img src="inc/main_topLogo.png"/>
+			<div id="main_header_info">
+				<a href="#" onclick="openInfo()">Info</a>
+				<a href="#" onclick="openHelp()">Help</a>
+				<a href="https://github.com/ajxs/jsFO" target="_blank">Github</a>
+			</div>
+		</div>
+		<canvas id="mainCanvas" oncontextmenu="javascript: return false;"></canvas>
+		<div id="main_failed" style="display: none">
+			<img src="inc/main_failed.png"/>
+		</div>
+	</div>
+
+	<div id="mainStorage">
+		<img id="trans_egg" src="inc/egg.png"/>
+		<img id="loadState_overlay" src="inc/loadState_overlay.png"/>
+		<img id="MainMenuState_bg" src="inc/MainMenuState_bg.png"/>
+		<img id="MainMenuState_btn" src="inc/MainMenuState_btn.png"/>
+		<img id="MainLoadState_bg" src="inc/MainLoadState_bg.png"/>
+	</div>
+	<div id="lightbox" style="display: none" onclick="closeWindows()"></div>
+	<div id="info" class="infoBox" style="display: none">
+		<div class="infoHeading">jsFO / Info</div>
+		jsFO is an open-source port of Interplay's Fallout2 for the browser, written in Javascript, with conversion of assets from the original Fallout2 handled in Python. jsFO uses the HTML5 canvas API for rendering, and should be compatible with all modern browsers.</br>
+		For more information, as well as access to the source-code, head over to the project's <a href="https://github.com/ajxs/jsFO/">Github Page</a>.
+	</div>
+	<div id="help" class="infoBox" style="display: none">
+		<div class="infoHeading">jsFO / Help</div>
+		All controls and functionality idential to the original Fallout2.</br>
+		Please report any bugs to: <a href="mailto:ajxscc@gmail.com">ajxscc@gmail.com</a>
+	</div>
+</body>
