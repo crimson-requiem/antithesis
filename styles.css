@@ -4,7 +4,8 @@ p {
 }
 h1 {
   color: white;
-  font-family: serif;
+  font-family: courier;
+  text-align: center;
 }
 body {
   background-color: #151B23;
@@ -15,8 +16,8 @@ button {
   color: black;
   font-family: courier;
   text-align: center;
-  transition-duration: 0.4ms
-  padding: 15px 32px
+  transition-duration: 0.4ms;
+  padding: 15px 32px;
   
 }
 button.hover {
@@ -26,11 +27,6 @@ button.hover {
 }
 .games {
   button {
-  width: 33%
+  width: 33%;
   }
-}
-.button-last {
-  button {
-    width: 50%
-}
 }
