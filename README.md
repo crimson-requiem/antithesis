@@ -10,4 +10,12 @@ js13k for more games
 <br>
 bad time simulator by jcw87
 <br>
+selenite-old for more games
+<br>
 me for making the site
+# features
+about:blank cloaker
+<br>
+around 100 games
+<br>
+soundboard
