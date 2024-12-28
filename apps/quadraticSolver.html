@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quadratic Equation Calculator - Online</title>
+        <script>
+'use strict'
+const disc = (A, B, C) => {
+    let a = A
+    let b = B
+    let c = C
+
+    const isIntCoeffs = Math.abs(Math.floor(A) - A) === 0 && Math.abs(Math.floor(b) - b) === 0 && Math.abs(Math.floor(C) - C) === 0
+
+    if(isIntCoeffs) {
+        if(a * c > 0) {
+            a = Math.abs(A)
+            c = Math.abs(C)
+        }
+        let loopCondition = false
+        do {
+            loopCondition = false
+            if(a < c) {
+                const tmp = a
+                a = c
+                c = tmp
+            }
+            const n = nearestInt(b / c)
+            if(n !== 0) {
+                const alpha = a - n * b
+                if(alpha >= -a) {
+                    b = b - n * c
+                    a = alpha - n * b
+                    if(a > 0) {
+                        loopCondition = true
+                    }
+                }
+            }
+        } while (loopCondition)
+    }
+    return b * b - a * c
+}
+const nearestInt = (n) => {
+    return Math.max(
+        Math.abs(n - Math.floor(n)),
+        Math.abs(n - Math.ceil(n))
+    )
+}
+const quadraticSolve = (A, B, C) => {
+    const b = -B / 2
+    const q = disc(A, b, C)
+
+    let X1 = 0
+    let Y1 = 0
+    let X2 = 0
+    let Y2 = 0
+
+    if(q < 0) {
+        X1 = b / A
+        X2 = X1
+        Y1 = Math.sqrt(-q) / A
+        Y2 = -Y1
+    } else {
+        const r = b + Math.sign(b) * Math.sqrt(q)
+
+        Y1 = 0
+        Y2 = 0
+        
+        if(r === 0) {
+            X1 = C / A
+            X2 = -C / A
+        } else {
+            X1 = C / r
+            X2 = r / A
+        }
+    }
+
+    return [
+        {real:X1, i:Y1},
+        {real:X2, i:Y2}
+    ]
+}
+        </script>
+        <style>
+            body {
+                background-color: black;
+            }
+            input {
+                width: 100%;
+                margin: 8px 0;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Quadratic Equation Calculator - Online</h1>
+        <p>
+            A <b>X<sup>2</sup></b>
+            +
+            B <b>X<sup>1</sup></b>
+            +
+            C
+            =
+            0
+        </p>
+
+        <form name="form" method="post" action="" onsubmit="test(form.a.value, form.b.value, form.c.value);return false;">
+            A:
+            <input type="number" name="a" value="2" size="25" maxlength="25">
+
+            <br>
+            B:
+            <input type="number" name="b" value="2" size="25" maxlength="25">
+
+            <br>
+            C:
+            <input type="number" name="c" value="2" size="25" maxlength="25">
+          
+            <br>
+            <button>Calculate Quadratic</button>
+
+            <h4>Output:</h4>
+            <div id="log"></div>
+            <mark>
+                <b id="roots"></b>
+            </mark>
+        </form>
+
+        <script src="quadratic.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+        const elm_log = document.querySelector("#log")
+        const elm_roots = document.querySelector("#roots")
+
+        const test = (a, b, c) => {
+            const res = quadraticSolve(a, b, c)
+            console.log(res)
+
+            const display = (value) => {
+                if(value.i === 0)
+                    return `${value.real}`
+                else
+                    return `${value.real} + ${value.i} <i>i</i>`
+            }
+            elm_roots.innerHTML = `X<sub>1</sub> = ${display(res[0])}<br>X<sub>2</sub> = ${display(res[1])}<br>`
+        }
+
+        window.addEventListener("load", () => {
+            document.querySelector("button").click()
+        })
+        </script>
+
+    </body>
+</html>
