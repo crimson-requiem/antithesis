@@ -19,3 +19,6 @@ about:blank cloaker
 around 100 games
 <br>
 soundboard
+<br>
+calculator so u can cheat on tests (hehehe~)
+<br>
