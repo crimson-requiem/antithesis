@@ -22,3 +22,8 @@ soundboard
 <br>
 calculator so u can cheat on tests (hehehe~)
 <br>
+still maintained, idiots
+# other stuff ig
+i might add music to the games search???
+<br>
+WAIT HOLD ON CHIPTUNE LUTHER WOULD GO SO HARD-
