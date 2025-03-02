@@ -1,6 +1,6 @@
 function create() {
     var url = document.getElementById('input').value;
-    var win = window.open();
+    var win = window.open('about:blank#blocked');
     win.document.body.style.margin = '0';
     win.document.body.style.height = '100vh';
     var iframe = win.document.createElement('iframe');
