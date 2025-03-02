@@ -12,7 +12,11 @@ bad time simulator by jcw87
 <br>
 selenite-old for more games
 <br>
-me for making the site
+loganvcairns for a lot of the undertale fangames
+<br>
+a lot of other people
+<br>
+all of 'em were super helpful for development, and this site wouldn't exist without them.
 # features
 about:blank cloaker
 <br>
