@@ -1,5 +1,5 @@
 # antithesis
-Site with comics, games, music,  and a soundboard. (Maintained as of December 31 2024)
+Site with comics, games, music,  and a soundboard. (Maintained as of March 2 2025)
 Also has a soundboard, so that's nice!
 <br>
 This site is rated highly by nine out of ten school administrators~
