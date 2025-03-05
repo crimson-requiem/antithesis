@@ -1,5 +1,5 @@
 let x = 0
-function 404() {
+function notfound() {
 setInterval(yuvan(), 5000);
 }
 function yuvan() {
